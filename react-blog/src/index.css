@@ -13,11 +13,17 @@ code {
 header {
   padding: 10px 44px;
   display: flex;
-  flex-direction: row-reverse;
+
+  justify-content: space-between;
   align-items: center;
   border: 1px solid #f2f2f2;
   min-height: 40px;
   gap: 20px;
+}
+
+header .header__logo {
+  font-weight: 800;
+  font-size: 24px;
 }
 
 header a {
@@ -112,6 +118,7 @@ footer a:hover {
 .post__content {
   font-size: 16px;
   color: gray;
+  line-height: 24px;
 }
 
 .post__utils {
@@ -140,4 +147,77 @@ footer a:hover {
   font-weight: 600;
   font-size: 18px;
   margin: 20px 0;
+}
+
+/* Post Detail */
+
+.post__detail {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post__detail .post__title {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.post__detail .post__profile-box {
+  padding: 10px 0;
+}
+
+.post__detail .post__utils {
+  flex-direction: row;
+  padding: 10px 0;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.post__detail .post__content {
+  padding: 20px 0;
+}
+
+/* profile */
+
+.profile__box {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.profile__box .flex__box-lg {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile__image {
+  width: 72px;
+  height: 72px;
+  background-color: #f2f2f2;
+  border-radius: 100%;
+}
+
+.profile__email {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile__name {
+  font-size: 14px;
+  color: gray;
+  margin-top: 4px;
+}
+
+.profile__logout {
+  color: gray;
+  font-size: 14px;
+}
+
+.profile__logout:focus,
+.profile__logout:hover {
+  color: black;
 }

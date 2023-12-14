@@ -13,7 +13,7 @@ export default function Carousel() {
   return (
     <div className="carousel">
       <ul className="carousel__slides">
-        <input type="radio" checked={activeImage === 1} name="image-radio" id="img1" />
+        <input type="radio" readOnly checked={activeImage === 1} name="image-radio" id="img1" />
         <li className="carousel__slide-container">
           <div className="carousel__img">
             <img src={IMAGE_1_URL} alt="slide image 1" />
@@ -27,7 +27,7 @@ export default function Carousel() {
             </label>
           </div>
         </li>
-        <input type="radio" checked={activeImage === 2} name="image-radio" id="img2" />
+        <input type="radio" readOnly checked={activeImage === 2} name="image-radio" id="img2" />
         <li className="carousel__slide-container">
           <div className="carousel__img">
             <img src={IMAGE_2_URL} alt="slide image 2" />
@@ -41,7 +41,7 @@ export default function Carousel() {
             </label>
           </div>
         </li>
-        <input type="radio" checked={activeImage === 3} name="image-radio" id="img3" />
+        <input type="radio" readOnly checked={activeImage === 3} name="image-radio" id="img3" />
         <li className="carousel__slide-container">
           <div className="carousel__img">
             <img src={IMAGE_3_URL} alt="slide image 3" />
@@ -56,9 +56,9 @@ export default function Carousel() {
           </div>
         </li>
         <div className="carousel__dots">
-          <label id="carousel-dot-1" className="carousel__dot" />
-          <label id="carousel-dot-2" className="carousel__dot" />
-          <label id="carousel-dot-3" className="carousel__dot" />
+          <label id="carousel-dot-1" onClick={() => setActiveImage(1)} className="carousel__dot" />
+          <label id="carousel-dot-2" onClick={() => setActiveImage(2)} className="carousel__dot" />
+          <label id="carousel-dot-3" onClick={() => setActiveImage(3)} className="carousel__dot" />
         </div>
       </ul>
     </div>

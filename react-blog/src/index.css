@@ -254,13 +254,13 @@ ul.carousel__slides {
 }
 
 .carousel__img {
-  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   opacity: 0;
   margin: 0;
+
   padding: 0;
   transition: opacity 0.7s ease-in-out;
 }
@@ -273,6 +273,7 @@ ul.carousel__slides {
 
 input:checked + .carousel__slide-container .carousel__img {
   opacity: 1;
+  z-index: 10;
 }
 
 .carousel__controls {
@@ -283,6 +284,7 @@ input:checked + .carousel__slide-container .carousel__img {
   font-size: 100px;
   line-height: 400px;
   color: #fff;
+  z-index: 999;
 }
 
 .carousel__controls label {
@@ -303,6 +305,10 @@ input:checked + .carousel__slide-container .carousel__img {
   text-align: left;
 }
 
+input:checked + .carousel__slide-container .carousel__controls label {
+  display: block;
+}
+
 .carousel__controls .carousel__controls-next {
   width: 30%;
 
@@ -311,11 +317,42 @@ input:checked + .carousel__slide-container .carousel__img {
 }
 
 .carousel__img:hover + .carousel__controls label {
-  display: block;
   opacity: 0.5;
 }
 
 .carousel__controls label:hover {
-  display: block;
   opacity: 1;
+}
+
+input:checked + .carousel__slide-container .carousel__img {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel__dots {
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.carousel__dot {
+  display: inline-block;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  cursor: pointer;
+  background-color: #fff;
+  margin: 10px;
+}
+
+input#img1:checked ~ .carousel__dots label#carousel-dot-1,
+input#img2:checked ~ .carousel__dots label#carousel-dot-2,
+input#img3:checked ~ .carousel__dots label#carousel-dot-3 {
+  background-color: black;
 }
